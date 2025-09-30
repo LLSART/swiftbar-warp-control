@@ -1,24 +1,26 @@
 # SwiftBar WARP Control
 
-🚀 **One-click password-free Cloudflare WARP control for macOS**
+**Professional macOS menu bar tool for password-free Cloudflare WARP VPN control**
 
-A powerful, secure, and user-friendly tool that adds Cloudflare WARP controls to your macOS menu bar through SwiftBar, without requiring password prompts every time.
+A secure and efficient SwiftBar plugin that provides seamless Cloudflare WARP VPN management directly from your macOS menu bar. Eliminate repetitive password prompts while maintaining security and ease of use.
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![macOS](https://img.shields.io/badge/macOS-10.15+-brightgreen.svg)
 ![SwiftBar](https://img.shields.io/badge/SwiftBar-2.0+-orange.svg)
+![GitHub release](https://img.shields.io/github/v/release/leeguooooo/swiftbar-warp-control)
+![GitHub stars](https://img.shields.io/github/stars/leeguooooo/swiftbar-warp-control)
 
-## ✨ Features
+## Features
 
-- **🔐 Password-Free Control**: Toggle WARP on/off without entering your password repeatedly
-- **🎯 One-Click Installation**: Automatically installs all dependencies including SwiftBar
-- **🛡️ Secure Design**: Minimal privilege escalation, only for WARP control commands
-- **🎨 Beautiful Interface**: Clean menu bar integration with status indicators
-- **🔄 Smart Detection**: Automatically detects WARP status and system requirements
-- **📱 Rich Menu Options**: Start, stop, restart, and status checking options
-- **🗑️ Easy Uninstall**: Complete removal with included uninstall script
+- **Password-Free Control**: Toggle WARP on/off without entering your password repeatedly
+- **One-Click Installation**: Automatically installs all dependencies including SwiftBar
+- **Secure Design**: Minimal privilege escalation, only for WARP control commands
+- **Clean Interface**: Seamless menu bar integration with status indicators
+- **Smart Detection**: Automatically detects WARP status and system requirements
+- **Rich Menu Options**: Start, stop, restart, and status checking options
+- **Easy Uninstall**: Complete removal with included uninstall script
 
-## 📸 Screenshots
+## Screenshots
 
 ### Menu Bar Integration
 ```
@@ -32,13 +34,13 @@ A powerful, secure, and user-friendly tool that adds Cloudflare WARP controls to
 - **Utilities**: View status, open WARP app
 - **Links**: Project homepage and documentation
 
-## 🔧 Requirements
+## Requirements
 
 - **macOS**: 10.15 (Catalina) or later
 - **Cloudflare WARP**: Must be installed from App Store or official website
 - **Admin Access**: Required for initial setup only
 
-## 🚀 Quick Install
+## Installation
 
 Run this single command in Terminal:
 
@@ -54,7 +56,7 @@ cd swiftbar-warp-control
 bash install.sh
 ```
 
-## 📋 What Gets Installed
+## What Gets Installed
 
 The installer automatically handles:
 
@@ -64,7 +66,7 @@ The installer automatically handles:
 4. **Sudo Configuration** (`/etc/sudoers.d/warp-toggle`)
 5. **SwiftBar Plugin** (`~/swiftbar/warp.5s.sh`)
 
-## 🔒 Security
+## Security
 
 This tool is designed with security in mind:
 
@@ -78,7 +80,7 @@ The sudo configuration only allows:
 username ALL=(ALL) NOPASSWD: /usr/local/bin/warp-control.sh
 ```
 
-## 🎮 Usage
+## Usage
 
 After installation, you'll see a WARP icon in your menu bar:
 
@@ -111,7 +113,7 @@ sudo /usr/local/bin/warp-control.sh status
 sudo /usr/local/bin/warp-control.sh toggle
 ```
 
-## 🗑️ Uninstall
+## Uninstall
 
 To completely remove all components:
 
@@ -126,7 +128,7 @@ This will remove:
 
 *Note: SwiftBar and Cloudflare WARP applications are not automatically removed.*
 
-## 🛠️ Manual Uninstall
+## Manual Uninstall
 
 If you need to manually remove components:
 
@@ -141,7 +143,7 @@ sudo rm -f /etc/sudoers.d/warp-toggle
 rm -f ~/swiftbar/warp.5s.sh
 ```
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### WARP doesn't start/stop
 1. Ensure Cloudflare WARP is installed and working
@@ -175,7 +177,7 @@ rm -f ~/swiftbar/warp.5s.sh
 
 For more help, see [Troubleshooting Guide](docs/TROUBLESHOOTING.md)
 
-## 🔄 Updates
+## Updates
 
 To update to the latest version:
 
@@ -187,7 +189,7 @@ git pull origin main
 bash install.sh
 ```
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Please read our [Contributing Guidelines](CONTRIBUTING.md) first.
 
@@ -210,26 +212,42 @@ bash install.sh
 4. Test thoroughly
 5. Submit a pull request
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - **[SwiftBar](https://github.com/swiftbar/SwiftBar)**: Powerful macOS menu bar customization
 - **[Cloudflare WARP](https://1.1.1.1/)**: Fast, secure, and private internet connection
 - **[BitBar](https://github.com/matryer/bitbar)**: The original inspiration for menu bar plugins
 
-## 📞 Support
+## Support
 
-- 🐛 **Bug Reports**: [GitHub Issues](https://github.com/leeguooooo/swiftbar-warp-control/issues)
-- 💡 **Feature Requests**: [GitHub Discussions](https://github.com/leeguooooo/swiftbar-warp-control/discussions)
-- 📚 **Documentation**: [Wiki](https://github.com/leeguooooo/swiftbar-warp-control/wiki)
+- **Bug Reports**: [GitHub Issues](https://github.com/leeguooooo/swiftbar-warp-control/issues)
+- **Feature Requests**: [GitHub Discussions](https://github.com/leeguooooo/swiftbar-warp-control/discussions)
+- **Documentation**: [Wiki](https://github.com/leeguooooo/swiftbar-warp-control/wiki)
 
-## ⭐ Star History
+## Sponsorship
 
-If this project helped you, please consider giving it a star! ⭐
+If this project has been helpful to you, please consider supporting its development:
+
+[![GitHub Sponsors](https://img.shields.io/badge/sponsor-GitHub%20Sponsors-ff69b4.svg)](https://github.com/sponsors/leeguooooo)
+[![Buy Me A Coffee](https://img.shields.io/badge/buy%20me%20a%20coffee-support-yellow.svg)](https://buymeacoffee.com/leeguooooo)
+[![Ko-fi](https://img.shields.io/badge/Ko--fi-F16061?style=flat&logo=ko-fi&logoColor=white)](https://ko-fi.com/leeguooooo)
+
+Your sponsorship helps maintain and improve this project. Thank you for your support!
+
+### Special Thanks to Our Sponsors
+
+*Sponsors will be listed here. Be the first to support this project!*
+
+## Star History
+
+If this project helped you, please consider giving it a star!
+
+[![Star History Chart](https://api.star-history.com/svg?repos=leeguooooo/swiftbar-warp-control&type=Date)](https://star-history.com/#leeguooooo/swiftbar-warp-control&Date)
 
 ---
 
-**Made with ❤️ for the macOS community**
+**Made with care for the macOS community**
