@@ -1,8 +1,12 @@
 # SwiftBar WARP Control
 
+**🚨 SOLVES: Cloudflare WARP stuck on/force-enabled - can't turn off issue**
+
 **Professional macOS menu bar tool for password-free Cloudflare WARP VPN control**
 
-A secure and efficient SwiftBar plugin that provides seamless Cloudflare WARP VPN management directly from your macOS menu bar. Eliminate repetitive password prompts while maintaining security and ease of use.
+A secure and efficient SwiftBar plugin that provides seamless Cloudflare WARP VPN management directly from your macOS menu bar. **Specifically designed to solve the common problem where Cloudflare WARP gets stuck in force-enabled mode and cannot be turned off through the normal interface.**
+
+🔧 **Core Problem Solved**: When Cloudflare WARP enters a forced-on state and becomes unresponsive to disable commands through the GUI, this tool provides reliable command-line based control to force disconnect and regain control of your VPN connection.
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![macOS](https://img.shields.io/badge/macOS-10.15+-brightgreen.svg)
@@ -12,11 +16,19 @@ A secure and efficient SwiftBar plugin that provides seamless Cloudflare WARP VP
 
 ## Features
 
+### 🎯 Core Solution
+- **Force Disable Stuck WARP**: Reliably turns off WARP when it's stuck in force-enabled mode
+- **Bypass GUI Limitations**: Works when the official WARP app becomes unresponsive
+- **Command-Line Reliability**: Uses robust CLI commands to ensure control works
+
+### 🚀 User Experience  
 - **Password-Free Control**: Toggle WARP on/off without entering your password repeatedly
 - **One-Click Installation**: Automatically installs all dependencies including SwiftBar
-- **Secure Design**: Minimal privilege escalation, only for WARP control commands
 - **Clean Interface**: Seamless menu bar integration with status indicators
 - **Smart Detection**: Automatically detects WARP status and system requirements
+
+### 🔒 Security & Reliability
+- **Secure Design**: Minimal privilege escalation, only for WARP control commands  
 - **Rich Menu Options**: Start, stop, restart, and status checking options
 - **Easy Uninstall**: Complete removal with included uninstall script
 
@@ -35,6 +47,21 @@ A secure and efficient SwiftBar plugin that provides seamless Cloudflare WARP VP
 - **Controls**: Start, Stop, Restart WARP
 - **Utilities**: View status, open WARP app
 - **Links**: Project homepage and documentation
+
+## When You Need This Tool
+
+### 🆘 Common WARP Problems This Solves:
+- ❌ "WARP won't turn off" - when the toggle is grayed out
+- ❌ "WARP stuck on" - when disconnecting doesn't work  
+- ❌ "Can't disable WARP" - when GUI controls become unresponsive
+- ❌ "WARP force enabled" - when enterprise/managed policies keep it on
+- ❌ "WARP app frozen" - when the official app stops responding
+
+### ✅ Why This Tool Works:
+- **Direct CLI Control**: Bypasses GUI limitations using `warp-cli` commands
+- **Force Disconnect**: Can terminate WARP connections that GUI can't stop
+- **Administrative Override**: Uses elevated privileges to ensure control works
+- **Process Management**: Can kill and restart WARP daemon if needed
 
 ## Requirements
 

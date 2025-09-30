@@ -1,15 +1,20 @@
 ---
 layout: default
-title: "SwiftBar WARP Control - Professional macOS VPN Menu Bar Tool"
-description: "Secure and efficient SwiftBar plugin for password-free Cloudflare WARP VPN management on macOS. One-click installation, menu bar integration, and enterprise security."
-keywords: "macOS, SwiftBar, Cloudflare WARP, VPN, menu bar, plugin, password-free, automation, security"
+title: "SwiftBar WARP Control - Fix Cloudflare WARP Stuck On/Force Enabled Issue"
+description: "Professional macOS tool to fix when Cloudflare WARP gets stuck on, force-enabled, or won't turn off. Password-free control via menu bar. Solves GUI freezing and unresponsive WARP problems."
+keywords: "cloudflare warp stuck on, warp won't turn off, warp force enabled, can't disable warp, warp app frozen, macos warp control, swiftbar warp plugin, warp gui unresponsive, force disconnect warp, warp cli alternative"
+canonical_url: "https://leeguooooo.github.io/swiftbar-warp-control/"
+og_type: "website"
+og_image: "https://leeguooooo.github.io/swiftbar-warp-control/demo.png"
 ---
 
-# SwiftBar WARP Control
+# Fix Cloudflare WARP Stuck On/Force Enabled Issue
 
-**Professional macOS menu bar tool for password-free Cloudflare WARP VPN control**
+**🚨 SOLVES: WARP Won't Turn Off, Stuck On, Force-Enabled Problems**
 
-A secure and efficient SwiftBar plugin that provides seamless Cloudflare WARP VPN management directly from your macOS menu bar. Eliminate repetitive password prompts while maintaining security and ease of use.
+**Professional macOS menu bar tool for reliable Cloudflare WARP control**
+
+When Cloudflare WARP gets **stuck in force-enabled mode** and won't turn off through the normal interface, this tool provides **reliable command-line based control** to force disconnect and regain control of your VPN connection. Specifically designed for the common problem where WARP becomes unresponsive to GUI controls.
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![macOS](https://img.shields.io/badge/macOS-10.15+-brightgreen.svg)
@@ -17,19 +22,34 @@ A secure and efficient SwiftBar plugin that provides seamless Cloudflare WARP VP
 ![GitHub release](https://img.shields.io/github/v/release/leeguooooo/swiftbar-warp-control)
 ![GitHub stars](https://img.shields.io/github/stars/leeguooooo/swiftbar-warp-control)
 
+## 🆘 Common WARP Problems This Solves
+
+### When WARP Gets Stuck:
+- ❌ **"WARP won't turn off"** - Toggle is grayed out or unresponsive
+- ❌ **"WARP stuck on"** - Disconnect button doesn't work
+- ❌ **"Can't disable WARP"** - GUI controls become frozen
+- ❌ **"WARP force enabled"** - Enterprise policies prevent disconnection
+- ❌ **"WARP app frozen"** - Official app stops responding
+
+### ✅ Why Our Solution Works:
+- **Direct CLI Control**: Bypasses GUI limitations using reliable `warp-cli` commands
+- **Force Disconnect**: Can terminate WARP connections that GUI can't stop
+- **Administrative Override**: Uses elevated privileges to ensure control works
+- **Process Management**: Can kill and restart WARP daemon if needed
+
 ## Why Choose SwiftBar WARP Control?
 
-### 🚀 **Zero-Friction VPN Management**
-Toggle Cloudflare WARP on/off instantly from your menu bar without entering your password every time. Perfect for developers, remote workers, and privacy-conscious users.
+### 🎯 **Specialized Problem Solver**
+Only tool specifically designed to solve WARP stuck/force-enabled issues. When other methods fail, this works.
+
+### 🚀 **Zero-Friction Operation**
+Toggle WARP on/off instantly from your menu bar without entering your password every time. Perfect for developers, remote workers, and privacy-conscious users.
 
 ### 🔒 **Enterprise-Grade Security**
 Minimal privilege escalation with isolated sudo permissions. Only the specific WARP control script can be executed without a password - no system-wide vulnerabilities.
 
 ### ⚡ **One-Click Installation**
 Automated installer handles everything: Homebrew, SwiftBar, security configuration, and plugin setup. Get running in under 2 minutes.
-
-### 🎯 **Native macOS Experience**
-Built specifically for macOS with seamless menu bar integration, smart status detection, and clean visual indicators.
 
 ## Demo
 

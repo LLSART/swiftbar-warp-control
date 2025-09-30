@@ -1,17 +1,36 @@
 User-agent: *
 Allow: /
 
-# Sitemap
-Sitemap: https://leeguooooo.github.io/swiftbar-warp-control/sitemap.xml
-
-# Allow search engines to index all content
+# High-priority pages for SEO
 Allow: /docs/
+Allow: /docs/warp-stuck-problem.md
+Allow: /docs/comparison.md
 Allow: /assets/
 Allow: /README.md
 Allow: /index.html
+Allow: /index.md
 
 # Prevent crawling of scripts and raw files
 Disallow: /scripts/
+Disallow: /config/
 Disallow: /*.sh$
 Disallow: /install.sh
 Disallow: /uninstall.sh
+Disallow: /Gemfile
+Disallow: /Gemfile.lock
+Disallow: /_site/
+
+# Crawl delay for better server performance
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://leeguooooo.github.io/swiftbar-warp-control/sitemap.xml
+
+# Special directives for better SEO
+User-agent: Googlebot
+Allow: /docs/warp-stuck-problem.md
+Allow: /docs/comparison.md
+
+User-agent: Bingbot
+Allow: /docs/warp-stuck-problem.md
+Allow: /docs/comparison.md

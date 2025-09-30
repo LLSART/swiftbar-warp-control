@@ -1,7 +1,7 @@
 # GitHub Pages configuration for SwiftBar WARP Control
 
-title: "SwiftBar WARP Control"
-description: "Professional macOS menu bar tool for password-free Cloudflare WARP VPN control"
+title: "SwiftBar WARP Control - Fix Cloudflare WARP Stuck On Issue"
+description: "Professional macOS tool to fix when Cloudflare WARP gets stuck on, force-enabled, or won't turn off. Password-free control via menu bar plugin."
 url: "https://leeguooooo.github.io"
 baseurl: "/swiftbar-warp-control"
 
@@ -9,6 +9,12 @@ baseurl: "/swiftbar-warp-control"
 author: "leeguooooo"
 lang: "en"
 timezone: "UTC"
+
+# Enhanced SEO metadata
+keywords: "cloudflare warp stuck on, warp won't turn off, warp force enabled, can't disable warp, warp app frozen, macos warp control, swiftbar warp plugin"
+site_logo: "/assets/logo.png"
+site_title: "SwiftBar WARP Control"
+tagline: "Fix WARP Stuck On/Force Enabled Issues"
 
 # GitHub Pages theme
 theme: minima
@@ -30,17 +36,37 @@ plugins:
   - jekyll-seo-tag
   - jekyll-feed
 
-# SEO metadata
+# Enhanced SEO metadata
 logo: /assets/logo.png
 twitter:
   username: leeguooooo
-  card: summary
+  card: summary_large_image
+
+# Open Graph settings
+image: /demo.png
+og_image: /demo.png
+
+# Schema.org markup
+json_ld:
+  type: "SoftwareApplication"
+  name: "SwiftBar WARP Control"
+  applicationCategory: "Utilities"
+  operatingSystem: "macOS"
+  offers:
+    type: "Offer"
+    price: "0"
+    priceCurrency: "USD"
 
 social:
   name: leeguooooo
   links:
     - https://github.com/leeguooooo
     - https://twitter.com/leeguooooo
+
+# Additional SEO settings
+webmaster_verifications:
+  google: # Add Google Search Console verification code
+  bing: # Add Bing Webmaster verification code
 
 # Exclude files from processing
 exclude:

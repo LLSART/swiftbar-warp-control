@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+  <!-- Homepage - highest priority -->
+  <url>
+    <loc>https://leeguooooo.github.io/swiftbar-warp-control/</loc>
+    <lastmod>2024-12-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Main problem solution page - very high priority -->
+  <url>
+    <loc>https://leeguooooo.github.io/swiftbar-warp-control/docs/warp-stuck-problem.html</loc>
+    <lastmod>2024-12-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Comparison page - high priority for competitive queries -->
+  <url>
+    <loc>https://leeguooooo.github.io/swiftbar-warp-control/docs/comparison.html</loc>
+    <lastmod>2024-12-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Documentation pages -->
+  <url>
+    <loc>https://leeguooooo.github.io/swiftbar-warp-control/docs/index.html</loc>
+    <lastmod>2024-12-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://leeguooooo.github.io/swiftbar-warp-control/docs/TROUBLESHOOTING.html</loc>
+    <lastmod>2024-12-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://leeguooooo.github.io/swiftbar-warp-control/docs/SECURITY.html</loc>
+    <lastmod>2024-12-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://leeguooooo.github.io/swiftbar-warp-control/docs/SEO.html</loc>
+    <lastmod>2024-12-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+  <!-- GitHub repository pages (external but related) -->
+  <!-- Note: These would be on github.com, included for reference -->
+
+</urlset>
