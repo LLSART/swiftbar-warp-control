@@ -22,6 +22,8 @@ A secure and efficient SwiftBar plugin that provides seamless Cloudflare WARP VP
 
 ## Screenshots
 
+![Demo](demo.png)
+
 ### Menu Bar Integration
 ```
 🟢 WARP  (when connected)
@@ -233,7 +235,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 If this project has been helpful to you, please consider supporting its development:
 
 [![GitHub Sponsors](https://img.shields.io/badge/sponsor-GitHub%20Sponsors-ff69b4.svg)](https://github.com/sponsors/leeguooooo)
-[![Buy Me A Coffee](https://img.shields.io/badge/buy%20me%20a%20coffee-support-yellow.svg)](https://buymeacoffee.com/leeguooooo)
 [![Ko-fi](https://img.shields.io/badge/Ko--fi-F16061?style=flat&logo=ko-fi&logoColor=white)](https://ko-fi.com/leeguooooo)
 
 Your sponsorship helps maintain and improve this project. Thank you for your support!

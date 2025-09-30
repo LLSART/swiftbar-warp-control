@@ -24,6 +24,8 @@
 
 ## 截图预览
 
+![Demo](demo.png)
+
 ### 菜单栏集成
 ```
 🟢 WARP  (连接时)
@@ -235,7 +237,6 @@ bash install.sh
 如果这个项目对您有帮助，请考虑支持项目的发展：
 
 [![GitHub Sponsors](https://img.shields.io/badge/sponsor-GitHub%20Sponsors-ff69b4.svg)](https://github.com/sponsors/leeguooooo)
-[![Buy Me A Coffee](https://img.shields.io/badge/buy%20me%20a%20coffee-support-yellow.svg)](https://buymeacoffee.com/leeguooooo)
 [![Ko-fi](https://img.shields.io/badge/Ko--fi-F16061?style=flat&logo=ko-fi&logoColor=white)](https://ko-fi.com/leeguooooo)
 
 您的赞助帮助维护和改进这个项目。感谢您的支持！

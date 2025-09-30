@@ -31,6 +31,10 @@ Automated installer handles everything: Homebrew, SwiftBar, security configurati
 ### 🎯 **Native macOS Experience**
 Built specifically for macOS with seamless menu bar integration, smart status detection, and clean visual indicators.
 
+## Demo
+
+![Demo](demo.png)
+
 ## Quick Start
 
 ```bash
@@ -98,7 +102,6 @@ This project is **100% open source** under the MIT license. If it's been helpful
 
 - ⭐ **Starring** the repository
 - 💝 **Sponsoring** development via [GitHub Sponsors](https://github.com/sponsors/leeguooooo)
-- ☕ **Buying me a coffee** via [Buy Me A Coffee](https://buymeacoffee.com/leeguooooo)
 - 🗣️ **Sharing** with others who might benefit
 
 ## Related Projects
