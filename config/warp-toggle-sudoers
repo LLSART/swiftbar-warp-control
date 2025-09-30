@@ -1,0 +1,10 @@
+# WARP Toggle - Allow specific user to control WARP without password
+# This file should be copied to /etc/sudoers.d/warp-toggle
+# 
+# Security note: This configuration only allows password-free execution of
+# the specific WARP control script, maintaining system security while
+# providing convenience for WARP management.
+
+# Allow user to run WARP control script without password
+# Replace 'leo' with the actual username during installation
+leo ALL=(ALL) NOPASSWD: /usr/local/bin/warp-control.sh

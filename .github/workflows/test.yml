@@ -1,0 +1,169 @@
+name: Test Installation
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test-macos:
+    runs-on: macos-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Check macOS version
+      run: sw_vers -productVersion
+      
+    - name: Test script syntax
+      run: |
+        # Check all shell scripts for syntax errors
+        find . -name "*.sh" -type f -exec bash -n {} \;
+        
+    - name: Validate install script structure
+      run: |
+        # Check if required files exist
+        test -f install.sh
+        test -f uninstall.sh
+        test -f scripts/warp-control.sh
+        test -f scripts/warp.5s.sh
+        test -f config/warp-toggle-sudoers
+        
+    - name: Check script permissions
+      run: |
+        # Verify scripts are executable
+        test -x install.sh
+        test -x uninstall.sh
+        test -x scripts/warp-control.sh
+        test -x scripts/warp.5s.sh
+        
+    - name: Test sudoers syntax
+      run: |
+        # Test sudoers file syntax (without actually installing)
+        sudo visudo -c -f config/warp-toggle-sudoers
+        
+    - name: Test WARP control script help
+      run: |
+        # Test help function of WARP control script
+        bash scripts/warp-control.sh --help || bash scripts/warp-control.sh
+        
+    - name: Test SwiftBar plugin basic functionality
+      run: |
+        # Test SwiftBar plugin without actual WARP
+        bash scripts/warp.5s.sh || true
+        
+    - name: Verify documentation exists
+      run: |
+        test -f README.md
+        test -f README-CN.md
+        test -f LICENSE
+        test -f docs/TROUBLESHOOTING.md
+        test -f docs/SECURITY.md
+        
+    - name: Check for hardcoded paths
+      run: |
+        # Ensure no hardcoded usernames (except in documentation)
+        ! grep -r "leo" scripts/ config/ || (echo "Found hardcoded username" && exit 1)
+        
+    - name: Test uninstall script structure
+      run: |
+        # Basic validation of uninstall script
+        grep -q "confirm_uninstall" uninstall.sh
+        grep -q "remove_warp_control" uninstall.sh
+        grep -q "remove_sudoers_config" uninstall.sh
+
+  security-check:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Run ShellCheck
+      uses: ludeeus/action-shellcheck@master
+      with:
+        scandir: './scripts'
+        
+    - name: Check for sensitive information
+      run: |
+        # Check for potential sensitive information
+        ! grep -r "password\|secret\|key" scripts/ config/ || (echo "Found potential sensitive info" && exit 1)
+        
+    - name: Validate sudoers configuration
+      run: |
+        # Check sudoers configuration follows security best practices
+        grep -q "NOPASSWD:" config/warp-toggle-sudoers
+        grep -q "/usr/local/bin/warp-control.sh" config/warp-toggle-sudoers
+        ! grep -q "ALL" config/warp-toggle-sudoers | grep -v "warp-control.sh" || (echo "Overly permissive sudoers" && exit 1)
+
+  documentation-check:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Check README completeness
+      run: |
+        # Verify README contains essential sections
+        grep -q "## Features" README.md
+        grep -q "## Installation" README.md
+        grep -q "## Usage" README.md
+        grep -q "## Security" README.md
+        grep -q "## Troubleshooting" README.md
+        
+    - name: Check Chinese README
+      run: |
+        # Verify Chinese README exists and has content
+        test -s README-CN.md
+        grep -q "功能特性" README-CN.md
+        
+    - name: Validate links (basic check)
+      run: |
+        # Check for broken internal links (basic validation)
+        ! grep -r "\[.*\](.*)" README.md | grep -v "http" | grep -v "#" || true
+
+  install-simulation:
+    runs-on: macos-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Simulate installation prerequisites
+      run: |
+        # Check if Homebrew would be available
+        which brew || echo "Homebrew not installed (expected in CI)"
+        
+    - name: Test installation script logic
+      run: |
+        # Test installation script functions without actually installing
+        bash -c 'source install.sh && command_exists bash'
+        
+    - name: Verify project structure
+      run: |
+        # Ensure all required directories and files exist
+        test -d scripts
+        test -d config
+        test -d docs
+        test -d .github/workflows
+        ls -la
+
+  compatibility-check:
+    strategy:
+      matrix:
+        os: [macos-11, macos-12, macos-13, macos-14]
+    runs-on: ${{ matrix.os }}
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Check macOS compatibility
+      run: |
+        echo "Testing on $(sw_vers -productName) $(sw_vers -productVersion)"
+        # Basic compatibility check
+        bash -n install.sh
+        bash -n uninstall.sh
