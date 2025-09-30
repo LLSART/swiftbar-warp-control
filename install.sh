@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # SwiftBar WARP Control - One-Click Installer
-# GitHub: https://github.com/yourusername/swiftbar-warp-control
+# GitHub: https://github.com/leeguooooo/swiftbar-warp-control
 # Description: Automatically install SwiftBar and configure password-free WARP control
 
 set -e

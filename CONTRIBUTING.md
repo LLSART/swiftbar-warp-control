@@ -9,12 +9,12 @@ Thank you for your interest in contributing to SwiftBar WARP Control! We welcome
 ## 🤝 如何贡献 | How to Contribute
 
 ### 报告问题 | Reporting Issues
-- 使用 [GitHub Issues](https://github.com/yourusername/swiftbar-warp-control/issues) 报告 bug
+- 使用 [GitHub Issues](https://github.com/leeguooooo/swiftbar-warp-control/issues) 报告 bug
 - 搜索现有 issues 避免重复报告
 - 提供详细的系统信息和重现步骤
 
 ### 建议功能 | Suggesting Features
-- 使用 [GitHub Discussions](https://github.com/yourusername/swiftbar-warp-control/discussions) 讨论新功能
+- 使用 [GitHub Discussions](https://github.com/leeguooooo/swiftbar-warp-control/discussions) 讨论新功能
 - 解释功能的用途和价值
 - 考虑安全性和兼容性影响
 
@@ -38,7 +38,7 @@ Thank you for your interest in contributing to SwiftBar WARP Control! We welcome
 ### 设置步骤 | Setup Steps
 ```bash
 # 1. 克隆项目
-git clone https://github.com/yourusername/swiftbar-warp-control.git
+git clone https://github.com/leeguooooo/swiftbar-warp-control.git
 cd swiftbar-warp-control
 
 # 2. 检查脚本语法
@@ -210,10 +210,10 @@ Before submitting a PR, please ensure:
 ## 📚 资源 | Resources
 
 ### 项目资源 | Project Resources
-- [GitHub Repository](https://github.com/yourusername/swiftbar-warp-control)
-- [Issues](https://github.com/yourusername/swiftbar-warp-control/issues)
-- [Discussions](https://github.com/yourusername/swiftbar-warp-control/discussions)
-- [Wiki](https://github.com/yourusername/swiftbar-warp-control/wiki)
+- [GitHub Repository](https://github.com/leeguooooo/swiftbar-warp-control)
+- [Issues](https://github.com/leeguooooo/swiftbar-warp-control/issues)
+- [Discussions](https://github.com/leeguooooo/swiftbar-warp-control/discussions)
+- [Wiki](https://github.com/leeguooooo/swiftbar-warp-control/wiki)
 
 ### 相关文档 | Related Documentation
 - [SwiftBar Documentation](https://github.com/swiftbar/SwiftBar)

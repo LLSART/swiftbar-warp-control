@@ -3,7 +3,7 @@
 # <bitbar.title>WARP Toggle</bitbar.title>
 # <bitbar.version>v2.0</bitbar.title>
 # <bitbar.author>SwiftBar WARP Control</bitbar.author>
-# <bitbar.author.github>yourusername</bitbar.author.github>
+# <bitbar.author.github>leeguooooo</bitbar.author.github>
 # <bitbar.desc>Control Cloudflare WARP without password prompts</bitbar.desc>
 # <bitbar.dependencies>bash</bitbar.dependencies>
 
@@ -21,7 +21,7 @@ if ps aux | grep "CloudflareWARP" | grep -v grep > /dev/null 2>&1; then
     echo "查看状态 | bash='$0' param1=status terminal=true"
     echo "打开 WARP 应用 | bash='open' param1='-a' param2='Cloudflare WARP' terminal=false"
     echo "---"
-    echo "关于 | href=https://github.com/yourusername/swiftbar-warp-control"
+    echo "关于 | href=https://github.com/leeguooooo/swiftbar-warp-control"
 else
     echo "🔴 WARP"
     echo "---"
@@ -32,7 +32,7 @@ else
     echo "查看状态 | bash='$0' param1=status terminal=true"
     echo "打开 WARP 应用 | bash='open' param1='-a' param2='Cloudflare WARP' terminal=false"
     echo "---"
-    echo "关于 | href=https://github.com/yourusername/swiftbar-warp-control"
+    echo "关于 | href=https://github.com/leeguooooo/swiftbar-warp-control"
 fi
 
 # Handle menu actions

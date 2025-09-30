@@ -45,13 +45,13 @@
 在终端中运行此命令：
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/yourusername/swiftbar-warp-control/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/leeguooooo/swiftbar-warp-control/main/install.sh | bash
 ```
 
 或手动克隆安装：
 
 ```bash
-git clone https://github.com/yourusername/swiftbar-warp-control.git
+git clone https://github.com/leeguooooo/swiftbar-warp-control.git
 cd swiftbar-warp-control
 bash install.sh
 ```
@@ -197,7 +197,7 @@ bash install.sh
 
 ```bash
 # 克隆仓库
-git clone https://github.com/yourusername/swiftbar-warp-control.git
+git clone https://github.com/leeguooooo/swiftbar-warp-control.git
 cd swiftbar-warp-control
 
 # 在开发模式下测试安装
@@ -224,9 +224,9 @@ bash install.sh
 
 ## 📞 支持
 
-- 🐛 **错误报告**: [GitHub Issues](https://github.com/yourusername/swiftbar-warp-control/issues)
-- 💡 **功能请求**: [GitHub Discussions](https://github.com/yourusername/swiftbar-warp-control/discussions)
-- 📚 **文档**: [Wiki](https://github.com/yourusername/swiftbar-warp-control/wiki)
+- 🐛 **错误报告**: [GitHub Issues](https://github.com/leeguooooo/swiftbar-warp-control/issues)
+- 💡 **功能请求**: [GitHub Discussions](https://github.com/leeguooooo/swiftbar-warp-control/discussions)
+- 📚 **文档**: [Wiki](https://github.com/leeguooooo/swiftbar-warp-control/wiki)
 
 ## ⭐ Star 历史
 

@@ -43,13 +43,13 @@ A powerful, secure, and user-friendly tool that adds Cloudflare WARP controls to
 Run this single command in Terminal:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/yourusername/swiftbar-warp-control/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/leeguooooo/swiftbar-warp-control/main/install.sh | bash
 ```
 
 Or clone and install manually:
 
 ```bash
-git clone https://github.com/yourusername/swiftbar-warp-control.git
+git clone https://github.com/leeguooooo/swiftbar-warp-control.git
 cd swiftbar-warp-control
 bash install.sh
 ```
@@ -195,7 +195,7 @@ Contributions are welcome! Please read our [Contributing Guidelines](CONTRIBUTIN
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/swiftbar-warp-control.git
+git clone https://github.com/leeguooooo/swiftbar-warp-control.git
 cd swiftbar-warp-control
 
 # Test installation in development mode
@@ -222,9 +222,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Support
 
-- 🐛 **Bug Reports**: [GitHub Issues](https://github.com/yourusername/swiftbar-warp-control/issues)
-- 💡 **Feature Requests**: [GitHub Discussions](https://github.com/yourusername/swiftbar-warp-control/discussions)
-- 📚 **Documentation**: [Wiki](https://github.com/yourusername/swiftbar-warp-control/wiki)
+- 🐛 **Bug Reports**: [GitHub Issues](https://github.com/leeguooooo/swiftbar-warp-control/issues)
+- 💡 **Feature Requests**: [GitHub Discussions](https://github.com/leeguooooo/swiftbar-warp-control/discussions)
+- 📚 **Documentation**: [Wiki](https://github.com/leeguooooo/swiftbar-warp-control/wiki)
 
 ## ⭐ Star History
 
