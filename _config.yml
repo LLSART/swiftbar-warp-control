@@ -1,0 +1,61 @@
+# GitHub Pages configuration for SwiftBar WARP Control
+
+title: "SwiftBar WARP Control"
+description: "Professional macOS menu bar tool for password-free Cloudflare WARP VPN control"
+url: "https://leeguooooo.github.io"
+baseurl: "/swiftbar-warp-control"
+
+# SEO settings
+author: "leeguooooo"
+lang: "en"
+timezone: "UTC"
+
+# GitHub Pages theme
+theme: minima
+
+# Navigation
+navigation:
+  - title: "Home"
+    url: /
+  - title: "Documentation"
+    url: /docs/
+  - title: "Installation"
+    url: /#installation
+  - title: "GitHub"
+    url: https://github.com/leeguooooo/swiftbar-warp-control
+
+# SEO plugins
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-feed
+
+# SEO metadata
+logo: /assets/logo.png
+twitter:
+  username: leeguooooo
+  card: summary
+
+social:
+  name: leeguooooo
+  links:
+    - https://github.com/leeguooooo
+    - https://twitter.com/leeguooooo
+
+# Exclude files from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - scripts/
+  - install.sh
+  - uninstall.sh
+
+# Include additional files
+include:
+  - _pages
+  - docs

@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://leeguooooo.github.io/swiftbar-warp-control/sitemap.xml
+
+# Allow search engines to index all content
+Allow: /docs/
+Allow: /assets/
+Allow: /README.md
+Allow: /index.html
+
+# Prevent crawling of scripts and raw files
+Disallow: /scripts/
+Disallow: /*.sh$
+Disallow: /install.sh
+Disallow: /uninstall.sh
