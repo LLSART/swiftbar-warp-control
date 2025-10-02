@@ -94,6 +94,7 @@ The installer automatically handles:
 3. **WARP Control Script** (`/usr/local/bin/warp-control.sh`)
 4. **Sudo Configuration** (`/etc/sudoers.d/warp-toggle`)
 5. **SwiftBar Plugin** (`~/swiftbar/warp.5s.sh`)
+6. **SwiftBar Configuration** (automatic plugin directory setup)
 
 ## Security
 
@@ -111,7 +112,7 @@ username ALL=(ALL) NOPASSWD: /usr/local/bin/warp-control.sh
 
 ## Usage
 
-After installation, you'll see a WARP icon in your menu bar:
+After installation, the WARP control icon will automatically appear in your menu bar. **No manual configuration required** - the installer automatically sets up SwiftBar with the correct plugin directory.
 
 ### Status Indicators
 - **🟢 WARP**: Connected and running
@@ -183,8 +184,9 @@ rm -f ~/swiftbar/warp.5s.sh
 
 ### Menu bar icon doesn't appear
 1. Check if SwiftBar is running
-2. Verify plugin directory in SwiftBar preferences
-3. Refresh SwiftBar plugins
+2. Restart SwiftBar application
+3. If still not working, manually verify plugin directory in SwiftBar preferences (should be `~/swiftbar`)
+4. Refresh SwiftBar plugins
 
 ### Permission denied errors
 1. Verify sudoers configuration:

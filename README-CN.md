@@ -69,6 +69,7 @@ bash install.sh
 3. **WARP 控制脚本** (`/usr/local/bin/warp-control.sh`)
 4. **Sudo 配置** (`/etc/sudoers.d/warp-toggle`)
 5. **SwiftBar 插件** (`~/swiftbar/warp.5s.sh`)
+6. **SwiftBar 配置** (自动设置插件目录)
 
 ## 安全性
 
@@ -86,7 +87,7 @@ username ALL=(ALL) NOPASSWD: /usr/local/bin/warp-control.sh
 
 ## 使用方法
 
-安装后，您将在菜单栏中看到 WARP 图标：
+安装后，WARP 控制图标将自动出现在您的菜单栏中。**无需手动配置** - 安装程序会自动为 SwiftBar 设置正确的插件目录。
 
 ### 状态指示器
 - **🟢 WARP**: 已连接并运行

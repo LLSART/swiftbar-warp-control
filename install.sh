@@ -190,6 +190,19 @@ install_swiftbar_plugin() {
     print_success "SwiftBar WARP 插件已安装: $WARP_PLUGIN_PATH"
 }
 
+# Function to configure SwiftBar preferences
+configure_swiftbar_preferences() {
+    print_step "${GEAR}" "配置 SwiftBar 偏好设置..."
+    
+    # Set plugin directory
+    defaults write com.ameba.SwiftBar PluginDirectory "$SWIFTBAR_PLUGINS_DIR"
+    
+    # Enable auto make plugin executable
+    defaults write com.ameba.SwiftBar MakePluginExecutable -bool true
+    
+    print_success "SwiftBar 插件目录已自动配置: $SWIFTBAR_PLUGINS_DIR"
+}
+
 # Function to start SwiftBar
 start_swiftbar() {
     print_step "${ROCKET}" "启动 SwiftBar..."
@@ -238,6 +251,15 @@ verify_installation() {
     else
         print_error "SwiftBar 插件: 未找到或无执行权限"
         ((errors++))
+    fi
+    
+    # Check SwiftBar configuration
+    local configured_dir
+    configured_dir=$(defaults read com.ameba.SwiftBar PluginDirectory 2>/dev/null)
+    if [[ "$configured_dir" == "$SWIFTBAR_PLUGINS_DIR" ]]; then
+        print_success "SwiftBar 插件目录配置: 正确"
+    else
+        print_warning "SwiftBar 插件目录配置: 需要手动设置"
     fi
     
     # Test sudo permission
@@ -310,6 +332,11 @@ main() {
     
     echo
     
+    # Configure SwiftBar preferences
+    configure_swiftbar_preferences
+    
+    echo
+    
     # Start SwiftBar
     start_swiftbar
     
@@ -326,11 +353,12 @@ main() {
         echo
         print_success "现在您可以在菜单栏中看到 WARP 控制按钮"
         print_success "点击即可无密码开关 Cloudflare WARP"
+        print_success "SwiftBar 插件目录已自动配置，无需手动设置"
         echo
         print_info "如果看不到菜单栏图标，请:"
         print_info "1. 确保 SwiftBar 正在运行"
-        print_info "2. 在 SwiftBar 设置中添加插件目录: $SWIFTBAR_PLUGINS_DIR"
-        print_info "3. 刷新 SwiftBar 插件"
+        print_info "2. 重启 SwiftBar 应用"
+        print_info "3. 检查菜单栏中的 WARP 图标（🟢/🔴）"
         echo
         print_info "如需卸载，请运行: bash uninstall.sh"
     else
