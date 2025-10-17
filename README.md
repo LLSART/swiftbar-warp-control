@@ -1,83 +1,52 @@
 # SwiftBar WARP Control
 
-**🚨 SOLVES: Cloudflare WARP stuck on/force-enabled - can't turn off issue**
+一键无密码控制 Cloudflare WARP - macOS 菜单栏集成
 
-**Professional macOS menu bar tool for password-free Cloudflare WARP VPN control**
+<div align="center">
 
-A secure and efficient SwiftBar plugin that provides seamless Cloudflare WARP VPN management directly from your macOS menu bar. **Specifically designed to solve the common problem where Cloudflare WARP gets stuck in force-enabled mode and cannot be turned off through the normal interface.**
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![macOS](https://img.shields.io/badge/macOS-10.15+-blue.svg)](https://www.apple.com/macos)
+[![Version](https://img.shields.io/badge/version-1.1.2-green.svg)](https://github.com/leeguooooo/swiftbar-warp-control)
 
-🔧 **Core Problem Solved**: When Cloudflare WARP enters a forced-on state and becomes unresponsive to disable commands through the GUI, this tool provides reliable command-line based control to force disconnect and regain control of your VPN connection.
+</div>
 
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
-![macOS](https://img.shields.io/badge/macOS-10.15+-brightgreen.svg)
-![SwiftBar](https://img.shields.io/badge/SwiftBar-2.0+-orange.svg)
-![GitHub release](https://img.shields.io/github/v/release/leeguooooo/swiftbar-warp-control)
-![GitHub stars](https://img.shields.io/github/stars/leeguooooo/swiftbar-warp-control)
+## ✨ 特性
 
-## Features
+- 🎯 **无密码控制** - 通过 SwiftBar 菜单一键启停 WARP，无需重复输入密码
+- 🚀 **一键安装** - 自动安装所有依赖，包括 SwiftBar 和 sudo 配置
+- 🔒 **安全设计** - 最小权限原则，只对特定脚本免密
+- 🎨 **优雅界面** - 菜单栏图标显示实时状态（🟢/🔴）
+- 🔍 **网络诊断** - v1.1.2 新增自动网络冲突检测
+- 📱 **智能提示** - 发现问题立即给出修复建议
 
-### 🎯 Core Solution
-- **Force Disable Stuck WARP**: Reliably turns off WARP when it's stuck in force-enabled mode
-- **Bypass GUI Limitations**: Works when the official WARP app becomes unresponsive
-- **Command-Line Reliability**: Uses robust CLI commands to ensure control works
+## 🆕 v1.1.2 新功能
 
-### 🚀 User Experience  
-- **Password-Free Control**: Toggle WARP on/off without entering your password repeatedly
-- **One-Click Installation**: Automatically installs all dependencies including SwiftBar
-- **Clean Interface**: Seamless menu bar integration with status indicators
-- **Smart Detection**: Automatically detects WARP status and system requirements
+### 自动网络冲突检测
+- ✅ 检测本地网络是否与企业内网冲突
+- ✅ 检测 Docker 网络配置问题
+- ✅ 提供详细的修复建议
+- ✅ 独立诊断工具
 
-### 🔒 Security & Reliability
-- **Secure Design**: Minimal privilege escalation, only for WARP control commands  
-- **Rich Menu Options**: Start, stop, restart, and status checking options
-- **Easy Uninstall**: Complete removal with included uninstall script
+**使用方法：**
+```bash
+# 集成检测
+sudo /usr/local/bin/warp-control.sh status
 
-## Screenshots
-
-![Demo](demo.png)
-
-### Menu Bar Integration
-```
-🟢 WARP  (when connected)
-🔴 WARP  (when disconnected)
+# 完整诊断
+bash diagnose-network.sh
 ```
 
-### Menu Options
-- **Status**: Connected/Disconnected with color indicators
-- **Controls**: Start, Stop, Restart WARP
-- **Utilities**: View status, open WARP app
-- **Links**: Project homepage and documentation
+详见：[新功能快速开始](./fix-docs/QUICK_START_NEW_FEATURES.md)
 
-## When You Need This Tool
+## 📦 安装
 
-### 🆘 Common WARP Problems This Solves:
-- ❌ "WARP won't turn off" - when the toggle is grayed out
-- ❌ "WARP stuck on" - when disconnecting doesn't work  
-- ❌ "Can't disable WARP" - when GUI controls become unresponsive
-- ❌ "WARP force enabled" - when enterprise/managed policies keep it on
-- ❌ "WARP app frozen" - when the official app stops responding
-
-### ✅ Why This Tool Works:
-- **Direct CLI Control**: Bypasses GUI limitations using `warp-cli` commands
-- **Force Disconnect**: Can terminate WARP connections that GUI can't stop
-- **Administrative Override**: Uses elevated privileges to ensure control works
-- **Process Management**: Can kill and restart WARP daemon if needed
-
-## Requirements
-
-- **macOS**: 10.15 (Catalina) or later
-- **Cloudflare WARP**: Must be installed from App Store or official website
-- **Admin Access**: Required for initial setup only
-
-## Installation
-
-Run this single command in Terminal:
+### 方法 1：一键安装（推荐）
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/leeguooooo/swiftbar-warp-control/main/install.sh | bash
 ```
 
-Or clone and install manually:
+### 方法 2：Git 克隆安装
 
 ```bash
 git clone https://github.com/leeguooooo/swiftbar-warp-control.git
@@ -85,199 +54,148 @@ cd swiftbar-warp-control
 bash install.sh
 ```
 
-## What Gets Installed
+安装脚本会自动：
+1. ✅ 检查系统要求
+2. ✅ 安装 Homebrew（如果需要）
+3. ✅ 安装 SwiftBar
+4. ✅ 配置 sudo 免密
+5. ✅ 安装控制脚本
+6. ✅ 启动 SwiftBar
 
-The installer automatically handles:
+## 🎯 使用
 
-1. **Homebrew** (if not already installed)
-2. **SwiftBar** (if not already installed)
-3. **WARP Control Script** (`/usr/local/bin/warp-control.sh`)
-4. **Sudo Configuration** (`/etc/sudoers.d/warp-toggle`)
-5. **SwiftBar Plugin** (`~/swiftbar/warp.5s.sh`)
-6. **SwiftBar Configuration** (automatic plugin directory setup)
+### SwiftBar 菜单控制
 
-## Security
+点击菜单栏的 WARP 图标：
+- 🟢 **已连接** - 显示绿色，点击可停止或重启
+- 🔴 **已断开** - 显示红色，点击可启动
 
-This tool is designed with security in mind:
-
-- **Minimal Privileges**: Only allows password-free execution of the specific WARP control script
-- **User-Specific**: Permissions are granted only to the installing user
-- **Isolated Commands**: No access to other system commands or sudo operations
-- **Open Source**: Full code transparency for security review
-
-The sudo configuration only allows:
-```bash
-username ALL=(ALL) NOPASSWD: /usr/local/bin/warp-control.sh
-```
-
-## Usage
-
-After installation, the WARP control icon will automatically appear in your menu bar. **No manual configuration required** - the installer automatically sets up SwiftBar with the correct plugin directory.
-
-### Status Indicators
-- **🟢 WARP**: Connected and running
-- **🔴 WARP**: Disconnected or stopped
-
-### Menu Actions
-- **Start WARP**: Connect to Cloudflare WARP
-- **Stop WARP**: Disconnect from WARP
-- **Restart WARP**: Restart the WARP connection
-- **View Status**: See detailed connection status in terminal
-- **Open WARP App**: Launch the official WARP application
-
-### Command Line Usage
-
-You can also control WARP directly from the terminal:
+### 命令行控制
 
 ```bash
-# Start WARP
+# 启动 WARP
 sudo /usr/local/bin/warp-control.sh start
 
-# Stop WARP
+# 停止 WARP
 sudo /usr/local/bin/warp-control.sh stop
 
-# Check status
+# 查看状态（含网络冲突检测）
 sudo /usr/local/bin/warp-control.sh status
 
-# Toggle on/off
+# 切换状态
 sudo /usr/local/bin/warp-control.sh toggle
 ```
 
-## Uninstall
-
-To completely remove all components:
+### 网络诊断
 
 ```bash
+# 完整网络诊断
+bash diagnose-network.sh
+
+# 快速测试
+bash test-fix.sh
+```
+
+## 📚 文档
+
+### 核心文档
+- **[CHANGELOG.md](./CHANGELOG.md)** - 版本更新历史
+- **[QUICK_REFERENCE.md](./QUICK_REFERENCE.md)** - 快速命令参考
+- **[QUICK_UPDATE.md](./QUICK_UPDATE.md)** - 快速更新指南
+- **[VERIFY.md](./VERIFY.md)** - 功能验证指南
+
+### 修复文档
+详细的问题修复和功能说明文档已整理到 [fix-docs/](./fix-docs/) 目录：
+
+- [新功能快速开始](./fix-docs/QUICK_START_NEW_FEATURES.md) ⭐
+- [完整修复总结](./fix-docs/FINAL_SUMMARY.md)
+- [网络冲突修复](./fix-docs/NETWORK_CONFLICT_FIX.md)
+- [更多文档...](./fix-docs/)
+
+## 🔧 工具脚本
+
+| 脚本 | 用途 |
+|------|------|
+| `install.sh` | 一键安装 |
+| `uninstall.sh` | 完全卸载 |
+| `update.sh` | 更新到最新版本 |
+| `diagnose-network.sh` | 网络诊断工具 |
+| `test-fix.sh` | 自动化测试 |
+
+## 🔄 更新
+
+### 更新到 v1.1.2
+
+```bash
+cd swiftbar-warp-control
+git pull
+bash update.sh
+```
+
+或手动更新：
+```bash
+sudo cp scripts/warp-control.sh /usr/local/bin/warp-control.sh
+```
+
+## 🗑️ 卸载
+
+```bash
+cd swiftbar-warp-control
 bash uninstall.sh
 ```
 
-This will remove:
-- WARP control script
-- Sudo configuration
-- SwiftBar plugin
+卸载脚本会移除：
+- ✅ 控制脚本
+- ✅ sudo 配置
+- ✅ SwiftBar 插件
+- ⚠️ 不会卸载 SwiftBar 本身
 
-*Note: SwiftBar and Cloudflare WARP applications are not automatically removed.*
+## 💡 常见问题
 
-## Manual Uninstall
-
-If you need to manually remove components:
-
+### Q: 无法访问公司内网服务？
+A: 运行网络诊断工具：
 ```bash
-# Remove WARP control script
-sudo rm -f /usr/local/bin/warp-control.sh
+bash diagnose-network.sh
+```
+如果检测到网络冲突，按提示修复。
 
-# Remove sudo configuration
-sudo rm -f /etc/sudoers.d/warp-toggle
+### Q: SwiftBar 菜单没有反应？
+A: 检查 sudo 配置：
+```bash
+sudo -n /usr/local/bin/warp-control.sh status
+```
+如果要求密码，重新运行 `bash install.sh`。
 
-# Remove SwiftBar plugin
-rm -f ~/swiftbar/warp.5s.sh
+### Q: DNS 没有配置？
+A: 确认 WARP 真正连接：
+```bash
+warp-cli status
+# 应该显示: Connected
 ```
 
-## Troubleshooting
+更多问题请查看 [fix-docs/](./fix-docs/) 目录中的详细文档。
 
-### WARP doesn't start/stop
-1. Ensure Cloudflare WARP is installed and working
-2. Try running the control script manually:
-   ```bash
-   sudo /usr/local/bin/warp-control.sh status
-   ```
+## 🤝 贡献
 
-### Menu bar icon doesn't appear
-1. Check if SwiftBar is running
-2. Restart SwiftBar application
-3. If still not working, manually verify plugin directory in SwiftBar preferences (should be `~/swiftbar`)
-4. Refresh SwiftBar plugins
+欢迎贡献！请查看 [CONTRIBUTING.md](./CONTRIBUTING.md)。
 
-### Permission denied errors
-1. Verify sudoers configuration:
-   ```bash
-   sudo visudo -c -f /etc/sudoers.d/warp-toggle
-   ```
-2. Try logging out and back in
-3. Reinstall using the install script
+## 📄 许可证
 
-### SwiftBar plugin shows error
-1. Check if the control script exists:
-   ```bash
-   ls -la /usr/local/bin/warp-control.sh
-   ```
-2. Verify script permissions:
-   ```bash
-   sudo chmod 755 /usr/local/bin/warp-control.sh
-   ```
+MIT License - 详见 [LICENSE](./LICENSE)
 
-For more help, see [Troubleshooting Guide](docs/TROUBLESHOOTING.md)
+## 🙏 致谢
 
-## Updates
+- [SwiftBar](https://github.com/swiftbar/SwiftBar) - macOS 菜单栏工具
+- [Cloudflare WARP](https://1.1.1.1/) - 网络安全服务
 
-To update to the latest version:
+## 📞 支持
 
-```bash
-# Pull latest changes
-git pull origin main
-
-# Reinstall
-bash install.sh
-```
-
-## Contributing
-
-Contributions are welcome! Please read our [Contributing Guidelines](CONTRIBUTING.md) first.
-
-### Development Setup
-
-```bash
-# Clone the repository
-git clone https://github.com/leeguooooo/swiftbar-warp-control.git
-cd swiftbar-warp-control
-
-# Test installation in development mode
-bash install.sh
-```
-
-### Submitting Changes
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Acknowledgments
-
-- **[SwiftBar](https://github.com/swiftbar/SwiftBar)**: Powerful macOS menu bar customization
-- **[Cloudflare WARP](https://1.1.1.1/)**: Fast, secure, and private internet connection
-- **[BitBar](https://github.com/matryer/bitbar)**: The original inspiration for menu bar plugins
-
-## Support
-
-- **Bug Reports**: [GitHub Issues](https://github.com/leeguooooo/swiftbar-warp-control/issues)
-- **Feature Requests**: [GitHub Discussions](https://github.com/leeguooooo/swiftbar-warp-control/discussions)
-- **Documentation**: [Wiki](https://github.com/leeguooooo/swiftbar-warp-control/wiki)
-
-## Sponsorship
-
-If this project has been helpful to you, please consider supporting its development:
-
-[![GitHub Sponsors](https://img.shields.io/badge/sponsor-GitHub%20Sponsors-ff69b4.svg)](https://github.com/sponsors/leeguooooo)
-[![Ko-fi](https://img.shields.io/badge/Ko--fi-F16061?style=flat&logo=ko-fi&logoColor=white)](https://ko-fi.com/leeguooooo)
-
-Your sponsorship helps maintain and improve this project. Thank you for your support!
-
-### Special Thanks to Our Sponsors
-
-*Sponsors will be listed here. Be the first to support this project!*
-
-## Star History
-
-If this project helped you, please consider giving it a star!
-
-[![Star History Chart](https://api.star-history.com/svg?repos=leeguooooo/swiftbar-warp-control&type=Date)](https://star-history.com/#leeguooooo/swiftbar-warp-control&Date)
+- 🐛 [报告问题](https://github.com/leeguooooo/swiftbar-warp-control/issues)
+- 💬 [讨论区](https://github.com/leeguooooo/swiftbar-warp-control/discussions)
+- 📖 [完整文档](./fix-docs/)
 
 ---
 
-**Made with care for the macOS community**
+<div align="center">
+<b>让 WARP 控制更简单 🚀</b>
+</div>

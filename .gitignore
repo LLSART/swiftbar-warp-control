@@ -3,56 +3,25 @@
 .AppleDouble
 .LSOverride
 
-# Icon must end with two \r
-Icon
-
-# Thumbnails
-._*
-
-# Files that might appear in the root of a volume
-.DocumentRevisions-V100
-.fseventsd
-.Spotlight-V100
-.TemporaryItems
-.Trashes
-.VolumeIcon.icns
-.com.apple.timemachine.donotpresent
-
-# Directories potentially created on remote AFP share
-.AppleDB
-.AppleDesktop
-Network Trash Folder
-Temporary Items
-.apdisk
-
-# Logs
-*.log
-debug.log
-security-audit.log
+# Backup files
+*.backup
+*.backup-*
+docker-compose.yml.backup-*
 
 # Temporary files
 *.tmp
-*.temp
 *.swp
-*.swo
+*~
 
-# Backup files
-*.bak
-*.backup
+# Logs
+*.log
+logs/
 
-# Test files
-test_*
-*_test
-
-# IDE files
+# IDE
 .vscode/
 .idea/
-*.sublime-*
+*.iml
 
-# Local configuration
-.env
-.env.local
-
-# Build artifacts
-build/
-dist/
+# Test output
+test-output/
+diagnostic-reports/

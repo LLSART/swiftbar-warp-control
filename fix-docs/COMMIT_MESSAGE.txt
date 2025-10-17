@@ -1,0 +1,69 @@
+fix: properly establish WARP connection to fix DNS and disconnection issues
+
+## Critical Bug Fixes
+- Fix "macOS WARP DNS servers are not being set" CRITICAL error
+- Fix "Frequent Disconnections" CRITICAL error  
+- Properly establish VPN connection, not just start daemon process
+
+## Changes
+
+### scripts/warp-control.sh
+- Enhanced `start_warp()`: Now calls `warp-cli connect` after launching daemon
+- Enhanced `stop_warp()`: Now calls `warp-cli disconnect` before unloading daemon
+- Enhanced `get_status()`: Shows detailed connection status and WARP settings
+
+### Technical Details
+
+**Root Cause:**
+Previous version only used `launchctl load/unload` which started the daemon 
+process but didn't establish the actual VPN connection. This caused:
+- DNS servers not being configured
+- Network routes not being set up
+- Firewall rules not being applied
+- VPN tunnel not being established
+
+**Solution:**
+Now properly integrates with WARP using official `warp-cli` commands:
+1. Start: `launchctl load` → `warp-cli connect` 
+2. Stop: `warp-cli disconnect` → `launchctl unload`
+
+This ensures DNS configuration, routing, and all network features work correctly.
+
+## Documentation Added
+- WARP_FIX.md: Detailed technical explanation
+- QUICK_UPDATE.md: Quick update guide for users
+- EXECUTIVE_SUMMARY.md: Problem diagnosis and solution summary
+- test-fix.sh: Automated test script to verify the fix
+- Updated CHANGELOG.md with v1.1.0 release notes
+
+## Migration for Users
+
+Users experiencing DNS or connection issues should update:
+
+```bash
+sudo cp scripts/warp-control.sh /usr/local/bin/warp-control.sh
+sudo chmod 755 /usr/local/bin/warp-control.sh
+```
+
+## Testing
+
+Verify the fix:
+```bash
+sudo /usr/local/bin/warp-control.sh start
+warp-cli status  # Should show "Connected"
+scutil --dns | grep nameserver  # Should show Cloudflare DNS
+```
+
+Or run automated test:
+```bash
+bash test-fix.sh
+```
+
+## Impact
+- Severity: HIGH (fixes CRITICAL level issues)
+- Affected Users: All users, especially those with DNS/connection problems
+- Breaking Changes: None
+- Backwards Compatible: Yes
+
+Closes #[issue number if applicable]
+

@@ -7,6 +7,99 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.1] - 2025-10-17
+
+### Fixed
+- **CRITICAL PATH Issue**: Fixed warp-cli not being found when script runs via sudo (SwiftBar context)
+  - sudo resets PATH to `/usr/bin:/bin:/usr/sbin:/sbin`, excluding `/usr/local/bin` where warp-cli typically resides
+  - Added explicit PATH export at script startup to include common installation locations
+  - Implemented multi-layer warp-cli lookup: PATH → known absolute paths → app bundle
+  - Without this fix, `warp-cli connect/disconnect` would NEVER execute in SwiftBar, making v1.1.0 ineffective
+  
+- **Error Handling**: Properly capture and report warp-cli command failures
+  - Now captures exit codes from `warp-cli connect/disconnect` commands
+  - Displays detailed error messages instead of always showing "success"
+  - Returns appropriate exit codes to indicate actual operation status
+  - Helps diagnose issues like unregistered devices or invalid licenses
+
+### Added
+- `find_warp_cli()` function to reliably locate warp-cli in any environment
+- Support for multiple warp-cli installation paths:
+  - `/usr/local/bin/warp-cli` (Homebrew Intel)
+  - `/opt/homebrew/bin/warp-cli` (Homebrew Apple Silicon)
+  - `/Applications/Cloudflare WARP.app/Contents/Resources/warp-cli` (App bundle)
+- Enhanced status command now shows actual warp-cli path being used
+- Comprehensive error messages with troubleshooting hints
+
+### Changed
+- All warp-cli invocations now use absolute paths or validated command names
+- Error output is captured and displayed to users for better diagnostics
+- Status messages are now accurate (no false positives)
+
+### Technical Details
+**Critical Issue:**
+When SwiftBar invokes scripts via sudo, the PATH is reset to system directories only:
+```bash
+# Normal: /usr/local/bin:/usr/bin:/bin (warp-cli found ✓)
+# Sudo:   /usr/bin:/bin:/usr/sbin:/sbin (warp-cli NOT found ✗)
+```
+
+This meant v1.1.0's `warp-cli connect` calls were being skipped entirely, and the script fell back to only starting the daemon without establishing a connection.
+
+**Solution:**
+1. Export full PATH at script start: `export PATH="/usr/local/bin:/opt/homebrew/bin:$PATH"`
+2. Implement fallback search through known installation locations
+3. Use absolute paths for all warp-cli invocations
+
+This ensures reliable operation in both direct execution and sudo contexts.
+
+### Credits
+- Issue discovered and reported by: Leo (Code Review)
+- Severity: HIGH (v1.1.0 was non-functional in SwiftBar context)
+
+## [1.1.0] - 2025-10-17
+
+### Fixed
+- **Critical DNS Issue**: Fixed "macOS WARP DNS servers are not being set" error by properly establishing WARP connection
+- **Frequent Disconnections**: Resolved frequent disconnection issues by using `warp-cli connect/disconnect` commands
+- **Connection Management**: Now properly handles WARP network connection establishment, not just daemon process control
+
+### Changed
+- **Enhanced Start Flow**: `start` command now calls `warp-cli connect` after launching daemon to establish proper VPN connection
+- **Enhanced Stop Flow**: `stop` command now calls `warp-cli disconnect` before unloading daemon for graceful disconnection
+- **Improved Status**: `status` command now shows detailed connection information including WARP settings and connection state
+
+### Technical Details
+Previous version only used `launchctl load/unload` which started the daemon process but didn't establish the network connection. This caused:
+- DNS servers not being configured
+- Network routes not being set up
+- Firewall rules not being applied
+- VPN tunnel not being established
+
+New version properly integrates with WARP by:
+1. Starting daemon process (`launchctl load`)
+2. Establishing connection (`warp-cli connect`)
+3. Verifying connection status (`warp-cli status`)
+
+This ensures DNS configuration, routing, and all network features work correctly.
+
+### Migration
+Users experiencing DNS or connection issues should update by running:
+```bash
+cd /path/to/swiftbar-warp-control
+sudo cp scripts/warp-control.sh /usr/local/bin/warp-control.sh
+sudo chmod 755 /usr/local/bin/warp-control.sh
+```
+
+Then verify with:
+```bash
+sudo /usr/local/bin/warp-control.sh stop
+sudo /usr/local/bin/warp-control.sh start
+warp-cli status  # Should show "Connected"
+```
+
+See [WARP_FIX.md](./WARP_FIX.md) for detailed technical explanation and [QUICK_UPDATE.md](./QUICK_UPDATE.md) for update instructions.
+
 ## [1.0.0] - 2024-09-30
 
 ### Added
